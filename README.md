@@ -22,9 +22,9 @@ After you complete this course, you'll be able to:
 
 
 ## Prerequisites / Preparation for the workshop
-You need to pick one option (local or cloud) and perform the steps prior to the workshop.
-1) Local [A laptop with sufficient CPU and memory to run a k8s cluster using Vagrant](preq/local.md)
-2) Cloud: [A subscription with a cloud service (AWS) and StackPointCloud account (Free 30 Day trial available) for to run a k8s cluster](preq/cloud.md)
+You need to either BYOKC (Bring Your Own Kubernetes Cluster) or pick one of the options below (local or cloud) and perform the steps prior to the workshop.
+1) Local: [A laptop with sufficient CPU and memory to run a k8s cluster using Vagrant](preq/LOCAL.md)
+2) Cloud: [A subscription with a cloud service (AWS) and StackPointCloud account (Free 30 Day trial available) for to run a k8s cluster](preq/CLOUD.md)
 
 You also need to have your development environment with all your favorite tools with you. 
 And finally, interest in figuring out how to use k8s with persistent workloads.
