@@ -48,22 +48,26 @@ Once VirtualBox is installed, you will see a screen similar to the following:
 
 6.  On your Ubuntu host, install the SSH server:
 
-    ```sudo apt-get install openssh-server
+    ```
+    sudo apt-get install openssh-server
     ```
 
 7.  Now you should be able to access your VM using SSH. Check the status by running:
 
-    ```sudo service ssh status
+    ```
+    sudo service ssh status
     ```
    
 8.  Disable firewall on your Ubuntu VM by running:
     
-    ```sudo ufw disable
+    ```
+    sudo ufw disable
     ```
     
 9.  Install curl if it’s not already installed:
 
-    ```sudo apt install curl
+    ```
+    sudo apt install curl
     ```
     
 10.  By default, for each virtual machine, VirtualBox creates a private network (10.0.2.x) which is connected to your laptop’s network using NAT. However, you may not be able to your VMs from your local host through SSH just yet. To access your VM, you need to configure port forwarding. In the network setting of the VM. Click on Advanced/Port Forwarding and create a rule with the Host port 3022 and Guest Port 22. Name it SSH and leave other fields blank.
@@ -82,7 +86,8 @@ To get the latest version of Docker, install it from the official Docker reposit
 
 2.  Confirm that you want to install the binaries from the Docker repository instead of the default Ubuntu repository by running:
 
-    ```sudo apt-get install -y docker-ce
+    ```
+    sudo apt-get install -y docker-ce
     ```
 
 3.  Install Docker and make sure it’s up and running after installation is complete:
@@ -96,19 +101,22 @@ OpenEBS uses iSCSI to connect to the block volumes. Therefore, you need to insta
 
 1.  On your Ubuntu host, run:
 
-    ```sudo apt-get update
+    ```
+    sudo apt-get update
     sudo apt-get install open-iscsi
     sudo service open-iscsi restart
     ```
 
 2.  Check that the iSCSI initiator name is configured:
     
-    ```sudo cat /etc/iscsi/initiatorname.iscsi`
+    ```
+    sudo cat /etc/iscsi/initiatorname.iscsi
     ```
     
 3.  Verify the iSCSI service is up and running:
     
-    ```sudo service open-iscsi status`
+    ```
+    sudo service open-iscsi status
     ```
 
 ## Set up minikube and kubectl
@@ -128,7 +136,8 @@ OpenEBS uses iSCSI to connect to the block volumes. Therefore, you need to insta
 
 3.  Set up directories for storing minkube and kubectl configurations:
     
-    ```mkdir $HOME/.kube || true touch $HOME/.kube/config
+    ```
+    mkdir $HOME/.kube || true touch $HOME/.kube/config
     ```
 
 4.  Set up an environment for minikube by adding the following lines to the end of the ~/.profile file:
@@ -142,12 +151,14 @@ OpenEBS uses iSCSI to connect to the block volumes. Therefore, you need to insta
 
 5.  Confirm that environment variables are saved in your profile file:
 
-    ```cat ~/.profile
+    ```
+    cat ~/.profile
     ```
 
 6.  Start minikube:
     
-    ```sudo -E minikube start --vm-driver=none
+    ```
+    sudo -E minikube start --vm-driver=none
     ```
 
 7.  If you forgot to install Docker, you will get an error.
@@ -161,33 +172,38 @@ When using the none driver, the kubectl config and credentials generated will be
 
 8.  Verify that minikube is configured correctly and it has started by running:
 
-    ```minikube status
+    ```
+    minikube status
     ```
 
 9.  Verify Kubernetes configuration
 Check that kubectl is configured and services are up and running by getting the list of Kubernetes nodes and pods:
 
-    ```kubectl get nodes
+    ```
+    kubectl get nodes
     kubectl get pods --all-namespaces
     ```
 
 ## Set up OpenEBS
 1.  Download the latest OpenEBS Operator files using the following commands:
 
-    ```git clone https://github.com/openebs/openebs.git
+    ```
+    git clone https://github.com/openebs/openebs.git
     cd openebs/k8s
     ```
 
-2.  By default, OpenEBS launches OpenEBS Volumes with two replicas. To set one replica, as is the case with a single-node Kubernetes cluster, in the openebs-operator.yaml file, specify the environment variable DEFAULT_REPLICA_COUNT=1. This is supported in OpenEBS version 0.4 onwards.
+2.  By default, OpenEBS launches OpenEBS Volumes with two replicas. To set one replica, as is the case with a single-node Kubernetes cluster, in the openebs-operator.yaml file, specify the environment variable `DEFAULT_REPLICA_COUNT=1`. 
 
 3.  Apply the configuration changes:
     
-    ```kubectl apply -f openebs-operator.yaml
+    ```
+    kubectl apply -f openebs-operator.yaml
     ```
 
 4.  Add the OpenEBS storage classes that can then be used by developers and applications:
 
-    ```kubectl apply -f openebs-storageclasses.yaml
+    ```
+    kubectl apply -f openebs-storageclasses.yaml
     ```
 
 5.  Running stateful applications with OpenEBS storage
@@ -196,7 +212,8 @@ Check that kubectl is configured and services are up and running by getting the 
 
 7.  Get the list of storage classes using the following command. Choose the storage class that best suits your application.
     
-    ```kubectl get sc
+    ```
+    kubectl get sc
     ```
 
 You can find samples of YAML files for stateful workloads using OpenEBS under the the `openebs/k8s/demo` folder.
