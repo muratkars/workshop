@@ -1,26 +1,28 @@
 # Prerequisites - Getting started with a local Kubernetes setup 
 
-Minimum requirements to run Minikube:
+Minimum requirements to run Minikube locally:
 
 ## Hardware
-Machine Type – minimum 4 vCPUs.
-RAM – minimum 4 GB.
-VT-x/AMD-v virtualization must be enabled in your system BIOS
+- Machine Type – minimum 4 vCPUs.
+- RAM – minimum 4 GB.
+- VT-x/AMD-v virtualization must be enabled in your system BIOS
 
 ## Software
-[kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 If using macOS:
-xhyve driver, [VirtualBox](https://www.virtualbox.org/wiki/Downloads), or VMware Fusion.
+- xhyve driver, 
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads), or VMware Fusion.
 
 If using Linux:
-[VirtualBox](https://www.virtualbox.org/wiki/Downloads) or KVM.
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads) or KVM.
 
 NOTE: Minikube supports the `--vm-driver=none` option that runs Kubernetes components on the host and not in a VM. Docker is required to use this driver, but not the hypervisor.
 
 If using Windows:
-VirtualBox or Hyper-V. VMware Workstation is not supported.
-Since VirtualBox is available on all three platforms, I will describe this option.
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads) or Hyper-V. VMware Workstation is not supported.
+
+Since VirtualBox is available on all three platforms, we will describe this option.
 
 ## Install VirtualBox
 We will not cover the details of VirtualBox installation since it is very common and instructions are widely available online.
