@@ -22,14 +22,14 @@ apt-get install -y kubectl
 
 For other O/S follow the instruction [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl) and install kubectl on your local laptop. 
 
-3. Set up config via environment variables
+2. Set up config via environment variables
 
 ```
 export KUBECONFIG=/path/to/kubeconfig
 ```
 
 ## Verify Kubernetes configuration
-Check that kubectl is configured and services are up and running by getting the list of Kubernetes nodes and pods:
+1. Check that kubectl is configured and services are up and running by getting the list of Kubernetes nodes and pods:
 
  ```
     kubectl get nodes
