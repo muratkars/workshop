@@ -74,4 +74,4 @@ Jun 13 20:33:59 ip-172-23-1-144 systemd[1]: Started Login to default iSCSI targe
 
 Repeat steps 1 and 2 for the remaining nodes.
    
-### [Continue to Exercise 2 - Exercise 2 - Installing OpenEBS](../exercise-2/README.md)
+### [Continue to Exercise 2 - Installing OpenEBS](../exercise-2/README.md)
