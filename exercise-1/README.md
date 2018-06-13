@@ -31,10 +31,10 @@ export KUBECONFIG=/path/to/kubeconfig
 ## Verify Kubernetes configuration
 Check that kubectl is configured and services are up and running by getting the list of Kubernetes nodes and pods:
 
-    ```
+ ```
     kubectl get nodes
     kubectl get pods --all-namespaces
-    ```
+ ```
 Note the number of nodes you have. You need to know how many replicas you can schedule on seperate nodes.  
 
 ## Verify iSCSI Support
@@ -44,13 +44,13 @@ This step needs to be executed local on the Kubernetes nodes. OpenEBS uses iSCSI
 1. Check if the initiator name is configured.
 
 ```
-  sudo cat /etc/iscsi/initiatorname.iscsi
-  ## DO NOT EDIT OR REMOVE THIS FILE!
-  ## If you remove this file, the iSCSI daemon will not start.
-  ## If you change the InitiatorName, existing access control lists
-  ## may reject this initiator.  The InitiatorName must be unique
-  ## for each iSCSI initiator.  Do NOT duplicate iSCSI InitiatorNames.
-  InitiatorName=iqn.1993-08.org.debian:01:6277ea61267f
+sudo cat /etc/iscsi/initiatorname.iscsi
+## DO NOT EDIT OR REMOVE THIS FILE!
+## If you remove this file, the iSCSI daemon will not start.
+## If you change the InitiatorName, existing access control lists
+## may reject this initiator.  The InitiatorName must be unique
+## for each iSCSI initiator.  Do NOT duplicate iSCSI InitiatorNames.
+InitiatorName=iqn.1993-08.org.debian:01:6277ea61267f
 ```
 
 2. Check if the iSCSI service is running.
