@@ -185,42 +185,6 @@ Check that kubectl is configured and services are up and running by getting the 
     kubectl get nodes
     kubectl get pods --all-namespaces
     ```
-
-## Set up OpenEBS
-1.  Download the latest OpenEBS Operator files using the following commands:
-
-    ```
-    git clone https://github.com/openebs/openebs.git
-    cd openebs/k8s
-    ```
-
-2.  By default, OpenEBS launches OpenEBS Volumes with two replicas. To set one replica, as is the case with a single-node Kubernetes cluster, in the openebs-operator.yaml file, specify the environment variable `DEFAULT_REPLICA_COUNT=1`. 
-
-3.  Apply the configuration changes:
-    
-    ```
-    kubectl apply -f openebs-operator.yaml
-    ```
-
-4.  Add the OpenEBS storage classes that can then be used by developers and applications:
-
-    ```
-    kubectl apply -f openebs-storageclasses.yaml
-    ```
-
-5.  Running stateful applications with OpenEBS storage
-
-6.  To use OpenEBS as persistent storage for your stateful workloads, set the storage class in the Persistent Volume Claim (PVC) of your application to one of the OpenEBS storage class.
-
-7.  Get the list of storage classes using the following command. Choose the storage class that best suits your application.
-    
-    ```
-    kubectl get sc
-    ```
-
-You can find samples of YAML files for stateful workloads using OpenEBS under the the `openebs/k8s/demo` folder.
-
-Now you have your Kubernetes cluster up and running.
    
 ## Clone the lab repo
 
