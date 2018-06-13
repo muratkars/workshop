@@ -1,5 +1,7 @@
 # Exercise 2 - Installing OpenEBS
 
+In this exercise, we will learn how to deploy and validate OpenEBS on a functional Kubernetes cluster.
+
 ## Setting up OpenEBS and new Storage Classes
 
 1.  Download the latest OpenEBS Operator files using the following commands:
