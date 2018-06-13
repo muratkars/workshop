@@ -1,12 +1,12 @@
 # Exercise 1 - Accessing and validating your Kubernetes cluster
 
-You need to SSH into your nodes to run run some of the validation steps, but after that you can either use kubectl on your local laptop (recommended way) or continue to run the commands on the Kubernetes master node.  
+In this workshop we will execute some commands Kubernetes master nodes, therefore you need to SSH into your K8s nodes to run some of the validation steps, but after that you can either use kubectl on your local laptop (recommended way) or continue to run the commands on the Kubernetes master node.  
 
-## Install kubectl and configure 
+## Optional: Install and configure kubectl to access K8s cluster remotely 
 
-We will use the Kubernetes command-line tool, kubectl, to manage applications on Kubernetes. Using kubectl, you can inspect cluster resources; create, delete, and update components; and look at your new cluster and bring up example apps.
+If you'd like to use Kubernetes command-line tool, kubectl, to remotely manage applications on Kubernetes, then follow the instructions below. Using kubectl, you can inspect cluster resources; create, delete, and update components; and look at your new cluster and bring up example apps.
 
-1. If you don't have kubectl already, then install it via your OS's native package management
+1. Install it via your OS's native package management
 
 For Ubuntu/Debian:
 
@@ -29,9 +29,10 @@ export KUBECONFIG=/path/to/kubeconfig
 ```
 
 ## Verify Kubernetes configuration
+
 1. Check that kubectl is configured and services are up and running by getting the list of Kubernetes nodes and pods:
 
- ```
+```
 kubectl get nodes
 kubectl get pods --all-namespaces
  ```
