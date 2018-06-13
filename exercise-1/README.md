@@ -32,8 +32,8 @@ export KUBECONFIG=/path/to/kubeconfig
 1. Check that kubectl is configured and services are up and running by getting the list of Kubernetes nodes and pods:
 
  ```
-    kubectl get nodes
-    kubectl get pods --all-namespaces
+kubectl get nodes
+kubectl get pods --all-namespaces
  ```
 Note the number of nodes you have. You need to know how many replicas you can schedule on seperate nodes.  
 
