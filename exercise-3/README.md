@@ -87,7 +87,7 @@ If you set one of the OpenEBS StorageClasses as default StorageClass, then all y
             "containers": [
               {
                 "name": "pgset",
-                "image": "crunchydata/crunchy-postgres:centos7-10.0-1.6.0",
+                "image": "crunchydata/crunchy-postgres:centos7-10.4-1.8.3",
                 "ports": [
                   {
                     "containerPort": 5432,
@@ -158,9 +158,9 @@ If you set one of the OpenEBS StorageClasses as default StorageClass, then all y
     }
     ```
 
-This example will deploy a primary and replica Postgress PODs, both protected by PVs, created by PVCs that are requested by the `openebs-standard` storageClass.  
+This example will create service and a statefulset that will deploy a primary and replica Postgres pods, both protected by OpenEBS PVs, created by PVCs that are requested by the `openebs-standard` storage class.  
 
-3.  Deploy our example PostgreSQL.   
+3.  Deploy our example PostgreSQL workload.   
     
     ```
     ./run/sh
