@@ -17,6 +17,8 @@ In this exercise, we will learn how to deploy and validate OpenEBS on a function
     
     ```
     kubectl apply -f openebs-operator.yaml
+    kubectl apply -f openebs-config.yaml
+    
     ```
 
 4.  Add the OpenEBS storage classes that can then be used by developers and applications:
@@ -55,6 +57,23 @@ To use OpenEBS as persistent storage for your stateful workloads, we will need t
     openebs-standard     openebs.io/provisioner-iscsi                               2m
     openebs-zk           openebs.io/provisioner-iscsi                               2m
     snapshot-promoter    volumesnapshot.external-storage.k8s.io/snapshot-promoter   2m
+    ```
+    
+6.  To see the storage class definition such as storage pool, replica count and capacity run the comment below:
+    
+    ```
+    $ kubectl describe sc openebs-standard
+    Name:            openebs-standard
+    IsDefaultClass:  No
+    Annotations:     kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{},"name":"openebs-standard","namespace":""},"parameters":{"openebs.io/capacity":"5G","openebs.io/jiva-replica-count":"3","openebs.io/storage-pool":"default","openebs.io/volume-monitor":"true"},"provisioner":"openebs.io/provisioner-iscsi"}
+    
+    Provisioner:           openebs.io/provisioner-iscsi
+    Parameters:            openebs.io/capacity=5G,openebs.io/jiva-replica-count=3,openebs.io/storage-pool=default,openebs.io/volume-monitor=true
+    AllowVolumeExpansion:  <unset>
+    MountOptions:          <none>
+    ReclaimPolicy:         Delete
+    VolumeBindingMode:     Immediate
+    Events:                <none>
     ```
 Now you have your OpenEBS deployment up and running.
    
