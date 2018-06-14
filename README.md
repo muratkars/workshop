@@ -43,12 +43,11 @@ You should have a basic understanding of containers, Kubernetes, CAS and OpenEBS
 - [Exercise 4 - Storage Classes](exercise-4/README.md)
 - [Exercise 5 - Configuring Node Affinity](exercise-5/README.md)
 
-## Monitoring OpenEBS
+## (Optional) Monitoring OpenEBS
 - [Exercise 6 - ABC](exercise-6/README.md)
 
 ## Blue/Green Deployment
-- [Exercise 7 - ABC](exercise-7/README.md)
+- [Exercise 7 - Rollout your application with Blue/Green deployment](exercise-7/README.md)
 
 ## (Optional) Introduction to E2E Testing
-- [Exercise 8 - Litmus](exercise-8/README.md)
-- [Exercise 9 - ABC](exercise-9/README.md)
+- [Exercise 8 - Litmus](exercise-8/README.md
