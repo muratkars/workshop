@@ -58,8 +58,25 @@ To use OpenEBS as persistent storage for your stateful workloads, we will need t
     openebs-zk           openebs.io/provisioner-iscsi                               2m
     snapshot-promoter    volumesnapshot.external-storage.k8s.io/snapshot-promoter   2m
     ```
+
+7.  Optional: To create your own storage class, create a yaml file (example: [mystorageclass.yaml](mystorageclass.yaml)) similar to below, customize parameters, save and apply using `kubectl apply -f mystorageclass.yaml' command:
     
-6.  To see the storage class definition such as storage pool, replica count and capacity run the comment below:
+    ```
+    # Define a storage classes supported by OpenEBS
+
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+       name: openebs-mystorageclass
+    provisioner: openebs.io/provisioner-iscsi
+    parameters:
+      openebs.io/storage-pool: "default"
+      openebs.io/jiva-replica-count: "4"
+      openebs.io/volume-monitor: "true"
+      openebs.io/capacity: 5G
+      ```
+
+8.  To see the storage class definition such as storage pool, replica count and capacity run the comment below:
     
     ```
     $ kubectl describe sc openebs-standard
