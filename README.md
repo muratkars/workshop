@@ -46,8 +46,12 @@ You should have a basic understanding of containers, Kubernetes, CAS and OpenEBS
 ## (Optional) Monitoring OpenEBS
 - [Exercise 6 - Monitoring OpenEBS using Prometheus and Grafana](exercise-6/README.md)
 
+## Managing Snapshots
+- [Exercise 7 - Taking a snapshot of a Persistent Volume](exercise-7/README.md)
+- [Exercise 9 - Creating a volume from a Snapshot](exercise-8/README.md)
+
 ## Blue/Green Deployment
-- [Exercise 7 - Rollout your application with Blue/Green deployment](exercise-7/README.md)
+- [Exercise 9 - Rollout your application with Blue/Green deployment](exercise-9/README.md)
 
 ## (Optional) Introduction to E2E Testing
-- [Exercise 8 - Litmus](exercise-8/README.md
+- [Exercise 10 - Litmus](exercise-10/README.md)
