@@ -41,7 +41,7 @@ You should have a basic understanding of containers, Kubernetes, CAS and OpenEBS
 
 ## Configuring OpenEBS
 - [Exercise 4 - Storage Classes](exercise-4/README.md)
-- [Exercise 5 - Configuring Node Affinity](exercise-5/README.md)
+- [Exercise 5 - Configuring Storage Disaggregation with OpenEBS](exercise-5/README.md)
 
 ## (Optional) Monitoring OpenEBS
 - [Exercise 6 - Monitoring OpenEBS using Prometheus and Grafana](exercise-6/README.md)
