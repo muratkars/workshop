@@ -4,7 +4,8 @@ metadata:
     name: openebs-mystorageclass
 provisioner: openebs.io/provisioner-iscsi
 parameters:
-    openebs.io/jiva-replica-count: "1"
-    openebs.io/capacity: "1G"
+    openebs.io/jiva-replica-count: "3"
+    openebs.io/capacity: "3G"
     openebs.io/jiva-replica-image: "openebs/jiva:0.6.0"
     openebs.io/jiva-controller-image: "openebs/jiva:0.6.0"
+    openebs.io/storage-pool: "sp-mntdir"
