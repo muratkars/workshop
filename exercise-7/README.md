@@ -129,89 +129,59 @@ To create a snapshot you must reference the `PersistentVolumeClaim` name in the 
 
    ```$ kubectl get volumesnapshot 
    NAME            AGE 
-   snapshot-demo   18s
+   snapshot-blue   18s
    ```
 
 5.  The output above shows that your snapshot was created successfully. You can also check the snapshot-controller’s logs to verify this by using the following commands. 
 
-```
-$ kubectl get volumesnapshot -o yaml
- apiVersion: v1
- items:
-   - apiVersion: volumesnapshot.external-storage.k8s.io/v1
-  kind: VolumeSnapshot
-  metadata:
-    clusterName: ""
-    creationTimestamp: 2018-01-24T06:58:38Z
-    generation: 0
-    labels:
-      SnapshotMetadata-PVName: pvc-f1c1fdf2-00d2-11e8-acdc-54e1ad0c1ccc
-      SnapshotMetadata-Timestamp: "1516777187974315350"
-    name: snapshot-demo
-    namespace: default
-    resourceVersion: "1345"
-    selfLink: /apis/volumesnapshot.external-storage.k8s.io/v1/namespaces/default/volumesnapshots/fastfurious
-    uid: 014ec851-00d4-11e8-acdc-54e1ad0c1ccc
-  spec:
-    persistentVolumeClaimName: demo-vol1-claim
-    snapshotDataName: k8s-volume-snapshot-2a788036-00d4-11e8-9aa2-54e1ad0c1ccc
-  status:
-    conditions:
-    - lastTransitionTime: 2018-01-24T06:59:48Z
-      message: Snapshot created successfully
-      reason: ""
-      status: "True"
-      type: Ready
-    creationTimestamp: null
-```
-
-
-
-```
-$ kubectl get volumesnapshotdata -o yaml
-apiVersion: volumesnapshot.external-storage.k8s.io/v1
-  kind: VolumeSnapshotData
-  metadata:
-    clusterName: ""
-    creationTimestamp: 2018-01-24T06:59:48Z
-    name: k8s-volume-snapshot-2a788036-00d4-11e8-9aa2-54e1ad0c1ccc
-    namespace: ""
-    resourceVersion: "1344"
-    selfLink: /apis/volumesnapshot.external-storage.k8s.io/v1/k8s-volume-snapshot-2a788036-00d4-11e8-9aa2-54e1ad0c1ccc
-    uid: 2a789f5a-00d4-11e8-acdc-54e1ad0c1ccc
-  spec:
-    openebsVolume:
-      snapshotId: pvc-f1c1fdf2-00d2-11e8-acdc 54e1ad0c1ccc_1516777187978793304
-    persistentVolumeRef:
-      kind: PersistentVolume
-      name: pvc-f1c1fdf2-00d2-11e8-acdc-54e1ad0c1ccc
-    volumeSnapshotRef:
+    ```
+    $ kubectl create -f snapshot.yaml
+    volumesnapshot.volumesnapshot.external-storage.k8s.io "snapshot-blue" created
+    ubuntu@ip-172-23-1-130:~$ kubectl get volumesnapshot
+    NAME            AGE
+    snapshot-blue   11m
+    ubuntu@ip-172-23-1-130:~$ kubectl get volumesnapshot -o yaml
+    apiVersion: v1
+    items:
+    - apiVersion: volumesnapshot.external-storage.k8s.io/v1
       kind: VolumeSnapshot
-      name: default/snapshot-demo
-  status:
-    conditions:
-    - lastTransitionTime: null
-      message: Snapshot created successfully
-      reason: ""
-      status: "True"
-      type: Ready
-    creationTimestamp: null
-kind: List
-metadata:
-  resourceVersion: ""
-  selfLink: ""
-```
+      metadata:
+        clusterName: ""
+        creationTimestamp: 2018-06-18T21:42:50Z
+        generation: 1
+        labels:
+          SnapshotMetadata-PVName: pvc-d2e08c54-733e-11e8-9f52-06731769042c
+          SnapshotMetadata-Timestamp: "1529358170229916897"
+        name: snapshot-blue
+        namespace: default
+        resourceVersion: "26424"
+        selfLink: /apis/volumesnapshot.external-storage.k8s.io/v1/namespaces/default/volumesnapshots/snapshot-blue
+        uid: 8c2f17bc-7340-11e8-9f52-06731769042c
+      spec:
+        persistentVolumeClaimName: demo-vol1-claim
+        snapshotDataName: k8s-volume-snapshot-8c3bf11f-7340-11e8-8b06-0a580a020205
+      status:
+        conditions:
+        - lastTransitionTime: 2018-06-18T21:42:50Z
+          message: Snapshot created successfully
+          reason: ""
+          status: "True"
+          type: Ready
+        creationTimestamp: null
+    kind: List
+    metadata:
+      resourceVersion: ""
+      selfLink: ""
+    ```
 
 Once you have taken a snapshot, you can create a clone from the snapshot and restore your data.
 
-
-
 ## Deleting a Snapshot
 
-You can delete a snapshot that you have created which will also delete the corresponding Volume Snapshot Data resource from Kubernetes. The following command will delete the *snapshot.yaml* file.
+You can delete a snapshot that you have created which will also delete the corresponding Volume Snapshot Data resource from Kubernetes. 1.  The following command will delete the snapshot you have created.
 
-```
-kubectl apply -f snapshot.yaml
-```
+    ```
+    $ kubectl apply -f snapshot.yaml
+    ```
    
-### [Continue to Exercise 8 - Chaos Engineering with Litmus](../exercise-5/README.md)
+### [Continue to Exercise 8 - Cloning and Restoring a Snapshot](../exercise-8/README.md)
