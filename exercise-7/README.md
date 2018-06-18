@@ -178,8 +178,10 @@ Once you have taken a snapshot, you can create a clone from the snapshot and res
 
 ## Deleting a Snapshot
 
-You can delete a snapshot that you have created which will also delete the corresponding Volume Snapshot Data resource from Kubernetes. 1.  The following command will delete the snapshot you have created.
+You can delete a snapshot that you have created which will also delete the corresponding Volume Snapshot Data resource from Kubernetes.
 
+1.  The following command will delete the snapshot you have created.
+    
     ```
     $ kubectl delete -f snapshot.yaml
     ```
