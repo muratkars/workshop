@@ -27,7 +27,7 @@ With OpenEBS 0.6 release [openebs-operator.yaml](https://raw.githubusercontent.c
     volumesnapshots.volumesnapshot.external-storage.k8s.io       4h
     ```
 
-## Creating a stateful workload
+## Creating a stateful workload to take a snapshot
 
 Before creating a snapshot, you must have a PersistentVolumeClaim for which you need to take a snapshot.
 
@@ -106,7 +106,7 @@ To create a snapshot you must reference the `PersistentVolumeClaim` name in the 
     nano blue.yaml
     ```
 
-2.  Paste the content and save.
+3.  Paste the content and save.
 
     ```
     apiVersion: volumesnapshot.external-storage.k8s.io/v1
@@ -116,23 +116,23 @@ To create a snapshot you must reference the `PersistentVolumeClaim` name in the 
       namespace: default
     spec:
       persistentVolumeClaimName: demo-vol1-claim
-```
+    ```
 
-3.  Create snapshot:
+4.  Create snapshot:
     
     ```
     $ kubectl create -f snapshot.yaml
     volumesnapshot.volumesnapshot.external-storage.k8s.io "snapshot-blue" created
     ```
 
-4.  List snapshots:
+5.  List snapshots:
 
-   ```$ kubectl get volumesnapshot 
-   NAME            AGE 
-   snapshot-blue   18s
-   ```
+    ```$ kubectl get volumesnapshot 
+    NAME            AGE 
+    snapshot-blue   18s
+    ```
 
-5.  The output above shows that your snapshot was created successfully. You can also check the snapshot-controller’s logs to verify this by using the following commands. 
+6.  The output above shows that your snapshot was created successfully. You can also check the snapshot-controller’s logs to verify this by using the following commands. 
 
     ```
     $ kubectl create -f snapshot.yaml
