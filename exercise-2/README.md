@@ -11,7 +11,7 @@ In this exercise, we will learn how to deploy and validate OpenEBS on a function
     cd openebs/k8s
     ```
 
-2.  By default, OpenEBS launches OpenEBS Volumes with three replicas. To set one replica, as is the case with a single-node Kubernetes cluster, in the openebs-operator.yaml file, specify the environment variable `DEFAULT_REPLICA_COUNT=1`. 
+2.  By default, OpenEBS launches OpenEBS Volumes with three replicas. To set one replica, as is the case with a single-node Kubernetes cluster, in the openebs-operator.yaml file, specify the environment variable `DEFAULT_REPLICA_COUNT=1` or edit the file directly.
 
 3.  Apply the configuration changes:
     
@@ -30,7 +30,7 @@ In this exercise, we will learn how to deploy and validate OpenEBS on a function
 5. Validate OpenEBS deployment
 
    ```
-   $ kubectl get pods
+   $ kubectl get pods --namespace openebs
    NAME                                           READY     STATUS    RESTARTS   AGE
    maya-apiserver-6cfd67f8-2nlhd                  1/1       Running   0          21s
    openebs-provisioner-6797d44769-dxk82           1/1       Running   0          21s
