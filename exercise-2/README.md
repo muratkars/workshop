@@ -11,7 +11,7 @@ In this exercise, we will learn how to deploy and validate OpenEBS on a function
     cd openebs/k8s
     ```
 
-2.  By default, OpenEBS launches OpenEBS Volumes with three replicas. To set one replica, as is the case with a single-node Kubernetes cluster, in the openebs-operator.yaml file, specify the environment variable `DEFAULT_REPLICA_COUNT=1` or edit the file directly.
+2.  By default, OpenEBS launches OpenEBS Volumes with three replicas. To set one replica, as is the case with a single-node Kubernetes cluster, in the openebs-operator.yaml file, specify the environment variable `DEFAULT_REPLICA_COUNT=1` or edit the operator file directly.
 
 3.  Apply the configuration changes:
     
@@ -37,7 +37,7 @@ In this exercise, we will learn how to deploy and validate OpenEBS on a function
    openebs-snapshot-controller-565d8f576d-pj5f9   2/2       Running   0          21s
    ```
 
-   Confirm that all the three OpenEBS pods (maya-apiserver, openebs-provisioner and openebs-snapshot-controller) are in Running state.
+   Confirm that all the three OpenEBS pods (maya-apiserver, openebs-provisioner and openebs-snapshot-controller) are in `Running` state.
 
 To use OpenEBS as persistent storage for your stateful workloads, we will need to set the storage class in the Persistent Volume Claim (PVC) of your application to one of the OpenEBS storage class, therefore you need to know the Storage Class name.
 
