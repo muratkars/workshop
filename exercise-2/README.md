@@ -30,14 +30,14 @@ In this exercise, we will learn how to deploy and validate OpenEBS on a function
 5. Validate OpenEBS deployment
 
    ```
-   $ kubectl get pods
+   $ kubectl get pods --namespace openebs
    NAME                                           READY     STATUS    RESTARTS   AGE
    maya-apiserver-6cfd67f8-2nlhd                  1/1       Running   0          21s
    openebs-provisioner-6797d44769-dxk82           1/1       Running   0          21s
    openebs-snapshot-controller-565d8f576d-pj5f9   2/2       Running   0          21s
    ```
 
-   Confirm that all the three OpenEBS pods (maya-apiserver, openebs-provisioner and openebs-snapshot-controller) are in Running state.
+   Confirm that all the three OpenEBS pods (maya-apiserver, openebs-provisioner and openebs-snapshot-controller) are in `Running` state.
 
 To use OpenEBS as persistent storage for your stateful workloads, we will need to set the storage class in the Persistent Volume Claim (PVC) of your application to one of the OpenEBS storage class, therefore you need to know the Storage Class name.
 
