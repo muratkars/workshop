@@ -101,4 +101,4 @@ This parameter can be considered as a soft version of `NoSchedule`. In other wor
 
 Credit: Thanks to Amit Das for his article published on [openebs.blog.io](https://blog.openebs.io/how-do-i-configure-openebs-to-use-storage-on-specific-kubernetes-nodes-361e3e842a78).
    
-### [Continue to Exercise 6 - Monitoring OpenEBS using Prometheus and Grafana](../exercise-5/README.md)
+### [Continue to Exercise 6 - Monitoring OpenEBS using Prometheus and Grafana](../exercise-6/README.md)
