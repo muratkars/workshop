@@ -48,7 +48,7 @@ You should have a basic understanding of containers, Kubernetes, CAS and OpenEBS
 
 ## Managing Snapshots
 - [Exercise 7 - Taking a snapshot of a Persistent Volume](exercise-7/README.md)
-- [Exercise 8 - Creating a volume from a Snapshot](exercise-8/README.md)
+- [Exercise 8 - Cloning and Restoring a Snapshot](exercise-8/README.md)
 
 ## Blue/Green Deployment
 - [Exercise 9 - Rollout your application with Blue/Green deployment](exercise-9/README.md)
