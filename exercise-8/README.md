@@ -17,7 +17,7 @@ Such a `StorageClass` is necessary for restoring a Persistent Volume from an alr
     ```
     touch openebs-restore-storageclass.yaml
     nano openebs-restore-storageclass.yaml
-    ``    `
+    ```
     
 2.  Paste the content and save.
 
@@ -99,7 +99,7 @@ You can now create a `PersistentVolumeClaim` that will use the `StorageClass`
             claimName: demo-snap-vol-claim
     ---
 
-3.  Once *green.yaml* is created, you can deploy the YAML by using the following command:
+3.  Once `green.yaml` is created, you can deploy the YAML by using the following command:
 
     ```
     kubectl apply -f green.yaml
