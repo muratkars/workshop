@@ -30,7 +30,6 @@ You can specify the jiva replica count using the `openebs.io/jiva-replica-count`
 1.  Create an empty [openebs-mystrorageclass1.yaml](openebs-mystorageclass1.yaml) YAML file and edit:
 
     ```
-    touch openebs-mysc.yaml
     nano openebs-mystorageclass1.yaml
     ```
 
