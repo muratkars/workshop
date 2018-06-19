@@ -127,7 +127,8 @@ To create a snapshot you must reference the `PersistentVolumeClaim` name in the 
 
 5.  List snapshots:
 
-    ```$ kubectl get volumesnapshot 
+    ```
+    $ kubectl get volumesnapshot 
     NAME            AGE 
     snapshot-blue   18s
     ```
