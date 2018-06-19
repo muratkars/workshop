@@ -102,8 +102,8 @@ To create a snapshot you must reference the `PersistentVolumeClaim` name in the 
 2.  Create the snapshot YAML file. Example used here [snapshot.yaml](snapshot.yaml)
 
     ```
-    touch blue.yaml
-    nano blue.yaml
+    touch snapshot.yaml
+    nano snapshot.yaml
     ```
 
 3.  Paste the content and save.
