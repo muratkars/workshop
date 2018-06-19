@@ -135,6 +135,6 @@ If it is a public cloud deployment follow the steps below:
 8.  Now, you can monitor your OpenEBS volume metrics from Grafana dashboard.
 
 ## Launch Alertmanager UI
-1.  To launch `alertmanager` open a rbowser page and go to NodeIP:NodePort (NodePort of alertmanager service).
+1.  To launch `alertmanager` open a browser page and go to NodeIP:NodePort (NodePort of alertmanager service).
    
 ### [Continue to Exercise 7 - Rollout your stateful application with Blue/Green deployment](../exercise-7/README.md)
