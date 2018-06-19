@@ -36,11 +36,10 @@ Let's deploy a basic application that writes to persistent disk called [blue.yam
 1.  Create the application YAML file:
 
     ```
-    touch blue.yaml
     nano blue.yaml
     ```
     
-2.  Paste the content and save.
+2.  Paste the below content and save. This pod write time into a file called pod-out.txt stored on the persistent volume it creates and mounted to the `/tmp` folder.
 
     ```
     apiVersion: v1
@@ -102,11 +101,10 @@ To create a snapshot you must reference the `PersistentVolumeClaim` name in the 
 2.  Create the snapshot YAML file. Example used here [snapshot.yaml](snapshot.yaml)
 
     ```
-    touch snapshot.yaml
     nano snapshot.yaml
     ```
 
-3.  Paste the content and save.
+3.  Paste the content below and save.
 
     ```
     apiVersion: volumesnapshot.external-storage.k8s.io/v1
