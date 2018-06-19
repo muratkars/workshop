@@ -7,14 +7,13 @@ In this exercise, we will learn how to deploy a stateful workload on OpenEBS per
 Storage Classes are the foundation of dynamic provisioning in Kubernetes, allowing cluster administrators to define abstractions for the underlying storage platform.
 Users simply refer to a StorageClass by name in the PersistentVolumeClaim (PVC) using the “storageClassName” parameter.
 
-Let's take a look at one.
+1.   Let's take a look at one.
 
-    ```
     $ kubectl describe sc openebs-mongodb
     Name:            openebs-mongodb
     IsDefaultClass:  No
     Annotations:     kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{},"name":"openebs-mongodb","namespace":""},"parameters":{"openebs.io/capacity":"5G","openebs.io/fstype":"xfs","openebs.io/jiva-replica-count":"3","openebs.io/storage-pool":"default","openebs.io/volume-monitor":"true"},"provisioner":"openebs.io/provisioner-iscsi"}
-    
+        
     Provisioner:           openebs.io/provisioner-iscsi
     Parameters:            openebs.io/capacity=5G,openebs.io/fstype=xfs,openebs.io/jiva-replica-count=3,openebs.io/storage-pool=default,openebs.io/volume-monitor=true
     AllowVolumeExpansion:  <unset>
@@ -22,7 +21,7 @@ Let's take a look at one.
     ReclaimPolicy:         Delete
     VolumeBindingMode:     Immediate
     Events:                <none>
-    ```
+    
 ## Optional: Setting up a default StorageClass
 
 If you set one of the OpenEBS StorageClasses as default StorageClass, then all you need to do is create a PersistentVolumeClaim (PVC) and OpenEBS will take care of the rest – there is no need to specify the storageClassName.
