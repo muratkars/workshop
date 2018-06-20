@@ -7,8 +7,9 @@ In this exercise, we will learn how to deploy a stateful workload on OpenEBS per
 Storage Classes are the foundation of dynamic provisioning in Kubernetes, allowing cluster administrators to define abstractions for the underlying storage platform.
 Users simply refer to a StorageClass by name in the PersistentVolumeClaim (PVC) using the “storageClassName” parameter.
 
-1.   Let's take a look at one.
+1.  Let's take a look at one.
 
+    ```
     $ kubectl describe sc openebs-mongodb
     Name:            openebs-mongodb
     IsDefaultClass:  No
@@ -21,6 +22,7 @@ Users simply refer to a StorageClass by name in the PersistentVolumeClaim (PVC) 
     ReclaimPolicy:         Delete
     VolumeBindingMode:     Immediate
     Events:                <none>
+    ```
     
 ## Optional: Setting up a default StorageClass
 
@@ -157,7 +159,7 @@ If you set one of the OpenEBS Storage Classes as default Storage Class, then all
     }
     ```
 
-This example will create service and a statefulset that will deploy a primary and replica Postgres pods, both protected by OpenEBS PVs, created by PVCs that are requested by the `openebs-standard` storage class.  
+    This example will create service and a statefulset that will deploy a primary and replica Postgres pods, both protected by OpenEBS PVs, created by PVCs that are requested by the `openebs-standard` storage class.  
 
 3.  Deploy our example PostgreSQL workload.   
     
