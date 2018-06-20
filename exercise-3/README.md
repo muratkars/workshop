@@ -24,15 +24,15 @@ Users simply refer to a StorageClass by name in the PersistentVolumeClaim (PVC) 
     
 ## Optional: Setting up a default StorageClass
 
-If you set one of the OpenEBS StorageClasses as default StorageClass, then all you need to do is create a PersistentVolumeClaim (PVC) and OpenEBS will take care of the rest – there is no need to specify the storageClassName.
+If you set one of the OpenEBS Storage Classes as default Storage Class, then all you need to do is create a Persistent Volume Claim (PVC) and OpenEBS will take care of the rest – there is no need to specify the Storage Class Name.
 
-1.  Here is how you can set a default StorageClass:
+1.  Here is how you can set a default Storage Class:
 
     ```
     kubectl patch storageclass openebs-standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
     ```
 
-2.  Confirm default StorageClass is set:
+2.  Confirm default Storage Class is set:
 
     ```
     $ kubectl get sc
@@ -50,7 +50,7 @@ If you set one of the OpenEBS StorageClasses as default StorageClass, then all y
     snapshot-promoter            volumesnapshot.external-storage.k8s.io/snapshot-promoter   1h
     ``` 
 
-## Deploy PostgeSQL
+## Deploy PostgreSQL
 
 1.  View an example deployment:
 
@@ -165,7 +165,7 @@ This example will create service and a statefulset that will deploy a primary an
     ./run/sh
     ```
 
-4.  Validate your staeful workload by checking the services, PODs and PVs created.
+4.  Validate your stateful workload by checking the services, PODs and PVC/PVs created.
 
     ```
     $ kubectl get services
@@ -197,7 +197,7 @@ This example will create service and a statefulset that will deploy a primary an
     pvc-658c765c-6f60-11e8-9e48-0698b18c8dc8-rep-fc44bf78c-vxssz     1/1       Running   0          1m
     ```
    
-    Confirm that both pgset-0 and pgest-1 are runnung and OpenEBS controller with 3 replicas each are created.
+    Confirm that both pgset-0 and pgest-1 are running and OpenEBS controller with 3 replicas each are created.
    
 5.  Get the list of PVCs and PVs created for your application.
     
@@ -208,7 +208,8 @@ This example will create service and a statefulset that will deploy a primary an
     pgdata-pgset-1   Bound     pvc-658c765c-6f60-11e8-9e48-0698b18c8dc8   400M       RWO            openebs-standard   4m
     ```
     
-    ```$ kubectl get pv
+    ```
+    $ kubectl get pv
     NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS    CLAIM                    STORAGECLASS       REASON    AGE
     pvc-3f188c65-6f60-11e8-9e48-0698b18c8dc8   400M       RWO            Delete           Bound     default/pgdata-pgset-0   openebs-standard             6m
     pvc-658c765c-6f60-11e8-9e48-0698b18c8dc8   400M       RWO            Delete           Bound     default/pgdata-pgset-1   openebs-standard             4m
