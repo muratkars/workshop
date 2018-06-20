@@ -288,7 +288,7 @@ Once the `blue` application is running, you can take a snapshot, restore and use
     ```
     
     ```
-    kubectl create -f green-percona.yaml
+    $ kubectl create -f green-percona.yaml
     pod "green" created
     persistentvolumeclaim "demo-snap-vol-claim" created
     ```
