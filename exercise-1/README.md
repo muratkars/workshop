@@ -81,4 +81,4 @@ This step needs to be executed local on the Kubernetes nodes. OpenEBS uses iSCSI
 
 Repeat steps 1 and 2 for the remaining nodes.
    
-### [Continue to Exercise 2 - Installing OpenEBS](../exercise-2/README.md)
+### [Continue to Exercise 2 - Installing OpenEBS](../exercise-2)
