@@ -147,4 +147,4 @@ You can now create a `PersistentVolumeClaim` that will use the `StorageClass`
     ...
     ```
 
-### [Continue to Exercise 9 - Rollout your application with Blue/Green deployment](../exercise-9/README.md)
+### [Continue to Exercise 9 - Rollout your application with Blue/Green deployment](../exercise-9)
