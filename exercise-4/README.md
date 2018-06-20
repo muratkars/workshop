@@ -167,4 +167,4 @@ You can specify the monitoring policy for a particular volume using openebs.io/v
         openebs.io/volume-monitor: "true"
     ```
    
-### [Continue to Exercise 5 - Configuring Storage Disaggregation with OpenEBS](../exercise-5/README.md)
+### [Continue to Exercise 5 - Configuring Storage Disaggregation with OpenEBS](../exercise-5)
