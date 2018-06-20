@@ -95,4 +95,4 @@ In this exercise, we will learn how to deploy and validate OpenEBS on a function
     ```
 Now you have your OpenEBS deployment up and running.
    
-### [Continue to Exercise 3 - Deploying stateful workload on OpenEBS](../exercise-3/README.md)
+### [Continue to Exercise 3 - Deploying stateful workload on OpenEBS](../exercise-3)
