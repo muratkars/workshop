@@ -137,4 +137,4 @@ If it is a public cloud deployment follow the steps below:
 ## Launch Alertmanager UI
 1.  To launch `alertmanager` open a browser page and go to NodeIP:NodePort (NodePort of alertmanager service).
    
-### [Continue to Exercise 7 - Rollout your stateful application with Blue/Green deployment](../exercise-7/README.md)
+### [Continue to Exercise 7 - Taking a snapshot of a Persistent Volume](../exercise-7/README.md)
