@@ -52,6 +52,3 @@ You should have a basic understanding of containers, Kubernetes, CAS and OpenEBS
 
 ## Blue/Green Deployment
 - [Exercise 9 - Rollout your application with Blue/Green deployment](exercise-9/README.md)
-
-## (Optional) Introduction to E2E Testing
-- [Exercise 10 - Litmus](exercise-10/README.md)
