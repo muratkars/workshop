@@ -11,37 +11,38 @@ In this exercise, we will learn how to deploy and validate OpenEBS on a function
     cd openebs/k8s
     ```
 
-2.  By default, OpenEBS launches OpenEBS Volumes with three replicas. To set one replica, as is the case with a single-node Kubernetes cluster, in the openebs-operator.yaml file, specify the environment variable `DEFAULT_REPLICA_COUNT=1` or edit the operator file directly
+2.  By default, OpenEBS launches OpenEBS Volumes with three replicas. To set one replica, as is the case with a single-node Kubernetes cluster, in the openebs-operator.yaml file, specify the environment variable `DEFAULT_REPLICA_COUNT=1` or edit the operator file directly.
 
-3.  Apply the configuration changes:
+3.  Optional: By default, OpenEBS uses `/var/openebs` directory on every available node to create replica files. If you like to change the default or create a new StoragePool resource, you can edit `openebs-config.yaml` file and set a custom path. 
+
+4.  Apply the configuration changes:
     
     ```
     kubectl apply -f openebs-operator.yaml
     kubectl apply -f openebs-config.yaml
-    
     ```
 
-4.  Add the OpenEBS storage classes that can then be used by developers and applications:
+5.  Add the OpenEBS storage classes that can then be used by developers and applications:
 
     ```
     kubectl apply -f openebs-storageclasses.yaml
     ```
 
-5. Validate OpenEBS deployment
+6.  Validate OpenEBS deployment
 
-   ```
-   $ kubectl get pods --namespace openebs
-   NAME                                           READY     STATUS    RESTARTS   AGE
-   maya-apiserver-6cfd67f8-2nlhd                  1/1       Running   0          21s
-   openebs-provisioner-6797d44769-dxk82           1/1       Running   0          21s
-   openebs-snapshot-controller-565d8f576d-pj5f9   2/2       Running   0          21s
-   ```
+    ```
+    $ kubectl get pods --namespace openebs
+    NAME                                           READY     STATUS    RESTARTS   AGE
+    maya-apiserver-6cfd67f8-2nlhd                  1/1       Running   0          21s
+    openebs-provisioner-6797d44769-dxk82           1/1       Running   0          21s
+    openebs-snapshot-controller-565d8f576d-pj5f9   2/2       Running   0          21s
+    ```
 
-   Confirm that all the three OpenEBS pods (maya-apiserver, openebs-provisioner and openebs-snapshot-controller) are in `Running` state.
+    Confirm that all the three OpenEBS pods (maya-apiserver, openebs-provisioner and openebs-snapshot-controller) are in `Running` state.
 
-To use OpenEBS as persistent storage for your stateful workloads, we will need to set the storage class in the Persistent Volume Claim (PVC) of your application to one of the OpenEBS storage class, therefore you need to know the Storage Class name.
+    To use OpenEBS as persistent storage for your stateful workloads, we will need to set the `storageclass` in the Persistent Volume Claim (PVC) of your application to one of the OpenEBS storage class, therefore you need to know the `storageclass` name.
 
-5.  Get the list of storage classes using the following command. Choose the storage class that best suits your application.
+7.  Get the list of storage classes using the following command. Choose a `storageclass` that best suits your application.
     
     ```
     $ kubectl get sc
@@ -59,7 +60,7 @@ To use OpenEBS as persistent storage for your stateful workloads, we will need t
     snapshot-promoter    volumesnapshot.external-storage.k8s.io/snapshot-promoter   2m
     ```
 
-7.  Optional: To create your own storage class, create a yaml file (example: [mystorageclass.yaml](mystorageclass.yaml)) similar to below, customize parameters, save and apply using `kubectl apply -f mystorageclass.yaml' command:
+8.  Optional: To create your own storage class, create a YAML file (example: [mystorageclass.yaml](mystorageclass.yaml)) similar to below, customize parameters, save and apply using `kubectl apply -f mystorageclass.yaml' command:
     
     ```
     # Define a storage classes supported by OpenEBS
@@ -76,7 +77,7 @@ To use OpenEBS as persistent storage for your stateful workloads, we will need t
       openebs.io/capacity: 5G
       ```
 
-8.  To see the storage class definition such as storage pool, replica count and capacity run the comment below:
+9.  To see the storage class definition such as storage pool, replica count and capacity run the comment below:
     
     ```
     $ kubectl describe sc openebs-standard
