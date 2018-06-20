@@ -185,4 +185,4 @@ You can delete a snapshot that you have created which will also delete the corre
     $ kubectl delete -f snapshot.yaml
     ```
    
-### [Continue to Exercise 8 - Cloning and Restoring a Snapshot](../exercise-8/README.md)
+### [Continue to Exercise 8 - Cloning and Restoring a Snapshot](../exercise-8)
