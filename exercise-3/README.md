@@ -219,4 +219,4 @@ If you set one of the OpenEBS Storage Classes as default Storage Class, then all
     
 Now you have your stateful workload up and running.
    
-### [Continue to Exercise 4 - Storage Classes & Storage Policies](../exercise-4/README.md)
+### [Continue to Exercise 4 - Storage Classes & Storage Policies](../exercise-4)
