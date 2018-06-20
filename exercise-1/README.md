@@ -36,7 +36,12 @@ If you'd like to use Kubernetes command-line tool, kubectl, to remotely manage a
     kubectl get nodes
     kubectl get pods --all-namespaces
     ```
-    Note the number of nodes you have. You need to know how many replicas you can schedule on seperate nodes.  
+    Note the number of non-master nodes you have. You need to know how many replicas you can schedule on seperate nodes.  
+    By default, your cluster will not schedule pods on the master for security reasons. If you want to be able to schedule pods on the master, e.g. for a single-machine Kubernetes cluster for development, run:
+
+    ```
+    kubectl taint nodes --all node-role.kubernetes.io/master-
+    ```
 
 ## Verify iSCSI Support
 
@@ -45,7 +50,7 @@ This step needs to be executed local on the Kubernetes nodes. OpenEBS uses iSCSI
 1.  Check if the initiator name is configured.
 
     ```
-    sudo cat /etc/iscsi/initiatorname.iscsi
+    $ sudo cat /etc/iscsi/initiatorname.iscsi
     ## DO NOT EDIT OR REMOVE THIS FILE!
     ## If you remove this file, the iSCSI daemon will not start.
     ## If you change the InitiatorName, existing access control lists
@@ -57,7 +62,7 @@ This step needs to be executed local on the Kubernetes nodes. OpenEBS uses iSCSI
 2.  Check if the iSCSI service is running.
 
     ```
-    sudo service open-iscsi status
+    $ sudo service open-iscsi status
      ● open-iscsi.service - Login to default iSCSI targets
         Loaded: loaded (/lib/systemd/system/open-iscsi.service; enabled; vendor preset: enabled)
        Active: active (exited) since Wed 2018-06-13 20:33:59 UTC; 48min ago
