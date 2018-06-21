@@ -48,7 +48,6 @@ Add the chart repo with the following details:
 4.  Add the solution with the following details:
 
 – namespace : default
-– values -> rbacEnabled : false
 
 5.  Click on **Install** to finally add OpenEBS into your cluster.
 
