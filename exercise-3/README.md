@@ -26,7 +26,7 @@ Users simply refer to a StorageClass by name in the PersistentVolumeClaim (PVC) 
     
 ## Optional: Setting up a default StorageClass
 
-If you set one of the OpenEBS Storage Classes as default Storage Class, then all you need to do is create a Persistent Volume Claim (PVC) and OpenEBS will take care of the rest – there is no need to specify the Storage Class Name.
+If you set one of the OpenEBS StorageClasses as default StorageClass, then all you need to do is create a PersistentVolumeClaim (PVC) and OpenEBS will take care of the rest – there is no need to specify the storageClassName. You can use Kubernetes annotations to attach arbitrary non-identifying metadata to objects. Clients such as tools and libraries can retrieve this metadata. The OpenEBS operator makes use of these annotations to determine, in this case, what storage class is the default. 
 
 1.  Here is how you can set a default Storage Class:
 
