@@ -122,7 +122,7 @@ If it is a public cloud deployment follow the steps below:
     
 2.  Note down the NodePort, used to launch `grafana` User Interface and `alertmanager`.
 
-3.  To launch Grafana open NodeIP:NodePort (NodePort of grafana service) in your browser. If your cluster is on a public cloud provide then `ExternalIP:32514/login`.
+3.  To launch Grafana open NodeIP:NodePort (NodePort of grafana service) in your browser. If your cluster is on a public cloud provide then `ExternalIP:32515/login`.
 
 4.  Login using the credentials admin/admin.
 
